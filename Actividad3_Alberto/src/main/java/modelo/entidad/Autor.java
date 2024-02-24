@@ -1,6 +1,10 @@
-package modelo.requerimiento1.entidad;
+package modelo.entidad;
+
 
 import java.util.ArrayList;
+
+
+
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +19,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+
 
 @Entity
 @Table(name = "autores")
@@ -33,6 +38,62 @@ public class Autor {
     @ManyToOne//(cascade=CascadeType.ALL) 
     @JoinColumn(name="fk_id_libro", referencedColumnName="id")
 	private Libro libro;
+
+
+	public Autor() {
+		super();
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+
+	public Libro getLibro() {
+		return libro;
+	}
+
+
+	public void setLibro(Libro libro) {
+		this.libro = libro;
+	}
     
     // Getters and setters
+    
 }
