@@ -1,10 +1,13 @@
 package modelo.entidad;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -25,7 +28,9 @@ public class Libro {
     @JoinColumn(name = "editorial_id")
     private Editorial editorial;
 
-
+    @ManyToMany(mappedBy = "libros")
+    private List<Libreria> librerias;
+    
 	public Libro() {
 		super();
 	}
@@ -68,6 +73,14 @@ public class Libro {
 
 	public void setEditorial(Editorial editorial) {
 		this.editorial = editorial;
+	}
+
+	public List<Libreria> getLibrerias() {
+		return librerias;
+	}
+
+	public void setLibrerias(List<Libreria> librerias) {
+		this.librerias = librerias;
 	}
 
 	
