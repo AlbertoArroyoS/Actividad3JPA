@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -32,7 +33,10 @@ public class Libro {
     private Editorial editorial;
 
     
-    @ManyToMany(mappedBy = "libros", cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "coleccion_libros_libreria",
+            joinColumns = { @JoinColumn(name = "fk_id_libro") },
+            inverseJoinColumns = { @JoinColumn(name = "fk_id_libreria") })
     private List<Libreria> librerias = new ArrayList<>();
 
 

@@ -26,10 +26,10 @@ public class Libreria {
     private String direccion;
     
     @ManyToMany
-    @JoinTable(name = "coleccion_libros_editorial",
-    		joinColumns= { @JoinColumn(name="fk_id_libro", referencedColumnName="id") }, //FK que aporta libros
-    		   inverseJoinColumns= { @JoinColumn(name="fk_id_libreria", referencedColumnName="id")}) //FKs que aportan el resto de entidades
-    private List<Libro> libros = new ArrayList<>();
+    @JoinTable(name = "coleccion_libros_libreria",
+            joinColumns = { @JoinColumn(name = "fk_id_libreria") },
+            inverseJoinColumns = { @JoinColumn(name = "fk_id_libro") })
+    private List<ColeccionLibrosLibreria> coleccionLibrosLibreria = new ArrayList<>();
 
 	public Libreria() {
 		super();
@@ -67,14 +67,14 @@ public class Libreria {
 		this.direccion = direccion;
 	}
 
-	public List<Libro> getLibros() {
-		return libros;
+	public List<ColeccionLibrosLibreria> getColeccionLibrosLibreria() {
+		return coleccionLibrosLibreria;
 	}
 
-	public void setLibros(List<Libro> libros) {
-		this.libros = libros;
+	public void setColeccionLibrosLibreria(List<ColeccionLibrosLibreria> coleccionLibrosLibreria) {
+		this.coleccionLibrosLibreria = coleccionLibrosLibreria;
 	}
-    
-    
-    // Getters and setters
+
+	
+
 }

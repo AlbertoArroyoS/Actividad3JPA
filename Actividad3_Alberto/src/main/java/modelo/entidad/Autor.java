@@ -34,66 +34,54 @@ public class Autor {
 	private Date fechaNacimiento;//Date del paquete java.util
 
     
-    //Relacion de 1 a N con el Autor
-    @ManyToOne//(cascade=CascadeType.ALL) 
-    @JoinColumn(name="fk_id_libro", referencedColumnName="id")
-	private Libro libro;
-
+    @OneToMany(mappedBy="autor", cascade = CascadeType.PERSIST)
+    private List<Libro> libros = new ArrayList<>();
 
 	public Autor() {
 		super();
 	}
 
-
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
 	public String getApellidos() {
 		return apellidos;
 	}
-
 
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
-
 	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-
 
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	public List<Libro> getLibros() {
+		return libros;
+	}
 
-	public Libro getLibro() {
-		return libro;
+	public void setLibros(List<Libro> libros) {
+		this.libros = libros;
 	}
 
 
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
-    
-    // Getters and setters
+	
     
 }

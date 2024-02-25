@@ -27,70 +27,56 @@ public class Editorial {
     private String direccion;
 
     @OneToMany(mappedBy = "editorial", cascade = CascadeType.PERSIST)
-    private List<Libro> libros = new ArrayList<>();
+    private List<ColeccionLibrosEditorial> coleccionLibrosEditorial = new ArrayList<>();
     
-  //Relacion de 1 a N con el Autor
-    @ManyToOne//(cascade=CascadeType.ALL) 
-    @JoinColumn(name="fk_id_libro", referencedColumnName="id")
-	private Libro libro;
     
-    @ManyToMany
-    @JoinTable(name = "coleccion_libros_editorial",
-    		joinColumns= { @JoinColumn(name="fk_id_libro", referencedColumnName="id") }, //FK que aporta libros
-    		   inverseJoinColumns= { @JoinColumn(name="fk_id_editorial", referencedColumnName="id")}) //FKs que aportan el resto de entidades
-    private List<Libro> libros_editorial = new ArrayList<>();
-
 	public Editorial() {
 		super();
 	}
+
 
 	public int getId() {
 		return id;
 	}
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 
 	public String getNombre() {
 		return nombre;
 	}
 
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 
 	public String getDireccion() {
 		return direccion;
 	}
 
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 
-	public List<Libro> getLibros() {
-		return libros;
+
+	public List<ColeccionLibrosEditorial> getColeccionLibrosEditorial() {
+		return coleccionLibrosEditorial;
 	}
 
-	public void setLibros(List<Libro> libros) {
-		this.libros = libros;
+
+	public void setColeccionLibrosEditorial(List<ColeccionLibrosEditorial> coleccionLibrosEditorial) {
+		this.coleccionLibrosEditorial = coleccionLibrosEditorial;
 	}
 
-	public Libro getLibro() {
-		return libro;
-	}
 
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
 
-	public List<Libro> getLibros_editorial() {
-		return libros_editorial;
-	}
 
-	public void setLibros_editorial(List<Libro> libros_editorial) {
-		this.libros_editorial = libros_editorial;
-	}
 
     
 }

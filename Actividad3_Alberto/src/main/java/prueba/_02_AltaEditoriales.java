@@ -15,16 +15,14 @@ public class _02_AltaEditoriales {
 		EntityManager em = null;
 		
 		Editorial editorial1 = new Editorial();
-		editorial1.setNombre("Editorial1");
-		editorial1.setDireccion("Dirección1");
+		editorial1.setNombre("Planeta");
+		editorial1.setDireccion("Avenida Diagonal 662 Barcelona");
 
 
 		Editorial editorial2 = new Editorial();
-		editorial2.setNombre("Editorial2");
-		editorial2.setDireccion("Dirección2");
+		editorial2.setNombre("Espasa");
+		editorial2.setDireccion("Josefa Valcárcel, 42 Madrid");
 		
-		
-		emf = Persistence.createEntityManagerFactory("Actividad3JPA");
 		em = emf.createEntityManager();
 		em.getTransaction().begin();
 

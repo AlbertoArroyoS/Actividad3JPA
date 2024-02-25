@@ -3,6 +3,13 @@
 	<persistence-unit name="Actividad3JPA" transaction-type="RESOURCE_LOCAL">
 		<!-- Aqui pondemos todas las clases que queremos que JPA vaya a leer las anotaciones
 		para poder mapearlas a la BBDD -->
+		
+		<class>modelo.entidad.Libro</class>
+		<class>modelo.entidad.Editorial</class>
+		<class>modelo.entidad.Libreria</class>
+		<class>modelo.entidad.Autor</class>
+		<class>modelo.entidad.ColeccionLibrosEditorial</class>
+		<class>modelo.entidad.ColeccionLibrosLibreria</class>
 		<properties>
 			<!-- Tenemos una seríe de parametros minimos que decirle a JPA para que se pueda
 			contectar a la BBDD -->
