@@ -1,4 +1,4 @@
-package prueba;
+package modelo.actividad.altaBaseDatos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,8 +47,8 @@ public class _04_AltaLibrerias {
         libreria2.setNombreDueno("Dueño B");
         libreria2.setDireccion("Dirección B");
         List<Libro> librosLibreria2 = new ArrayList<>();
-        librosLibreria2.add(libro5); // Puedes asociar los mismos libros a ambas librerías
-        librosLibreria2.add(libro6);
+        librosLibreria2.add(libro1); // Puedes asociar los mismos libros a ambas librerías
+        librosLibreria2.add(libro2);
         librosLibreria2.add(libro7);
         librosLibreria2.add(libro8);
         libreria2.setLibros(librosLibreria2);

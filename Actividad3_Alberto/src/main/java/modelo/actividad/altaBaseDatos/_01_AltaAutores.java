@@ -1,4 +1,4 @@
-package prueba;
+package modelo.actividad.altaBaseDatos;
 
 import java.util.Date;
 
@@ -18,21 +18,21 @@ public class _01_AltaAutores {
 		
 		// Dar de alta 3 autores
 		Autor autor1 = new Autor();
-		autor1.setNombre("Miguel");
-		autor1.setApellidos("de Cervantes");
-		autor1.setFechaNacimiento(new Date());  // Proporciona una fecha válida
+		autor1.setNombre("Stephen");
+		autor1.setApellidos("King");
+		autor1.setFechaNacimiento(new Date(47, 8, 21));  // Proporciona una fecha válida
 		
 
 		Autor autor2 = new Autor();
-		autor2.setNombre("Charles");
-		autor2.setApellidos("Dickens");
-		autor2.setFechaNacimiento(new Date());  // Proporciona una fecha válida
+		autor2.setNombre("Juan");
+		autor2.setApellidos("Gómez-Jurado");
+		autor2.setFechaNacimiento(new Date(77, 11, 16));  // Proporciona una fecha válida
 		
 
 		Autor autor3 = new Autor();
 		autor3.setNombre("Ken");
 		autor3.setApellidos("Follet");
-		autor3.setFechaNacimiento(new Date());  // Proporciona una fecha válida
+		autor3.setFechaNacimiento(new Date(49, 5 - 1, 5));  // Proporciona una fecha válida
 		
 		em = emf.createEntityManager();
 		em.getTransaction().begin();

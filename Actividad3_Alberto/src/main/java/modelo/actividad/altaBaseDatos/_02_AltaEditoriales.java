@@ -1,4 +1,4 @@
-package prueba;
+package modelo.actividad.altaBaseDatos;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

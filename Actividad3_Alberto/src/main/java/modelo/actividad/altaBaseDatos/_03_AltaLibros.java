@@ -1,4 +1,4 @@
-package prueba;
+package modelo.actividad.altaBaseDatos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,23 +20,23 @@ public class _03_AltaLibros {
 		EntityManager em = null;
 		
 		Libro libro1 = new Libro();
-        libro1.setTitulo("Don Quijote de La Mancha");
+        libro1.setTitulo("It");
         libro1.setPrecio(19.99);
         
         Libro libro2 = new Libro();
-        libro2.setTitulo("La Galatea");
+        libro2.setTitulo("El resplandor");
         libro2.setPrecio(25.95);
         
         Libro libro3 = new Libro();
-        libro3.setTitulo("Cuentos de Navidad");
+        libro3.setTitulo("Todo vuelve");
         libro3.setPrecio(29.99);
         
         Libro libro4 = new Libro();
-        libro4.setTitulo("David Copperfield");
+        libro4.setTitulo("Todo arde");
         libro4.setPrecio(18.95);
         
         Libro libro5 = new Libro();
-        libro5.setTitulo("Oliver Twist");
+        libro5.setTitulo("Rey Blanco");
         libro5.setPrecio(11.87);
         
         Libro libro6 = new Libro();

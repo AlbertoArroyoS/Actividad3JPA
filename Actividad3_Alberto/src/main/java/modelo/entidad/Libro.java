@@ -1,19 +1,11 @@
 package modelo.entidad;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -33,17 +25,6 @@ public class Libro {
     @JoinColumn(name = "editorial_id")
     private Editorial editorial;
 
-    /*
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "coleccion_libros_libreria",
-            joinColumns = { @JoinColumn(name = "fk_id_libro") },
-            inverseJoinColumns = { @JoinColumn(name = "fk_id_libreria") })
-    private List<Libreria> librerias = new ArrayList<>();
-    */
-    /*
-    @OneToMany(mappedBy = "libro", cascade = CascadeType.PERSIST)
-    private List<ColeccionLibrosEditorial> coleccionesEditoriales = new ArrayList<>();
-*/
 
 	public Libro() {
 		super();
