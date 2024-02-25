@@ -3,10 +3,10 @@
 	<persistence-unit name="Actividad3JPA" transaction-type="RESOURCE_LOCAL">
 		
 		<!-- Aquí se incluyen todas las clases que JPA debe leer para mapearlas a la base de datos -->
-		<class>modelo.entidad.Autor</class>
-		<class>modelo.entidad.Editorial</class>
-		<class>modelo.entidad.Libreria</class>
-		<class>modelo.entidad.Libro</class>
+		<class>modelo.entidad.Equipo</class>
+		<class>modelo.entidad.Habilidad</class>
+		<class>modelo.entidad.IdentidadSecreta</class>
+		<class>modelo.entidad.SuperHeroe</class>
 		 
 		<properties>
 			<!-- Parámetros mínimos para que JPA pueda conectarse a la base de datos -->
