@@ -27,7 +27,7 @@ public class Editorial {
     private String direccion;
 
     @OneToMany(mappedBy = "editorial", cascade = CascadeType.PERSIST)
-    private List<ColeccionLibrosEditorial> coleccionLibrosEditorial = new ArrayList<>();
+    private List<Libro> coleccionLibrosEditorial;
     
     
 	public Editorial() {
@@ -65,18 +65,15 @@ public class Editorial {
 	}
 
 
-	public List<ColeccionLibrosEditorial> getColeccionLibrosEditorial() {
+	public List<Libro> getColeccionLibrosEditorial() {
 		return coleccionLibrosEditorial;
 	}
 
 
-	public void setColeccionLibrosEditorial(List<ColeccionLibrosEditorial> coleccionLibrosEditorial) {
+	public void setColeccionLibrosEditorial(List<Libro> coleccionLibrosEditorial) {
 		this.coleccionLibrosEditorial = coleccionLibrosEditorial;
 	}
 
 
-
-
-
-    
+	
 }

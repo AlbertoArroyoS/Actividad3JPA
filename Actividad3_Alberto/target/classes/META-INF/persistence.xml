@@ -8,8 +8,6 @@
 		<class>modelo.entidad.Editorial</class>
 		<class>modelo.entidad.Libreria</class>
 		<class>modelo.entidad.Autor</class>
-		<class>modelo.entidad.ColeccionLibrosEditorial</class>
-		<class>modelo.entidad.ColeccionLibrosLibreria</class>
 		<properties>
 			<!-- Tenemos una seríe de parametros minimos que decirle a JPA para que se pueda
 			contectar a la BBDD -->
@@ -27,6 +25,7 @@
 			<property name="javax.persistence.schema-generation.database.action" value="update"/>
 			 -->
 			 
+			
 			<property name="jakarta.persistence.schema-generation.database.action" value="update"/>
 						 
 			<!-- Mostrar trazas de sql y establecer dialecto con hibernate -->

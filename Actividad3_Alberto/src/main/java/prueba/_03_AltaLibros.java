@@ -86,6 +86,15 @@ public class _03_AltaLibros {
         libro7.setAutor(aut3);
         libro8.setAutor(aut3);
         
+        em.persist(libro1);
+        em.persist(libro2);
+        em.persist(libro3);
+        em.persist(libro4);
+        em.persist(libro5);
+        em.persist(libro6);
+        em.persist(libro7);
+        em.persist(libro8);
+        
         List<Libro> librosPlaneta = new ArrayList<Libro>();
         librosPlaneta.add(libro1);
         librosPlaneta.add(libro2);
@@ -98,17 +107,13 @@ public class _03_AltaLibros {
         librosEspasa.add(libro5);
         librosEspasa.add(libro6);
         
+        ed1.setColeccionLibrosEditorial(librosPlaneta);
+        ed2.setColeccionLibrosEditorial(librosEspasa);
         
-        em.persist(libro1);
-        em.persist(libro2);
-        em.persist(libro3);
-        em.persist(libro4);
-        em.persist(libro5);
-        em.persist(libro6);
-        em.persist(libro7);
-        em.persist(libro8);
-        
-		
+        em.persist(ed1);
+        em.persist(ed2);
+
+
 		em.getTransaction().commit(); 
 		em.close();				
 

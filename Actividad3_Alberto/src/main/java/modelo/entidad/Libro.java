@@ -13,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,78 +33,61 @@ public class Libro {
     @JoinColumn(name = "editorial_id")
     private Editorial editorial;
 
-    
+    /*
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "coleccion_libros_libreria",
             joinColumns = { @JoinColumn(name = "fk_id_libro") },
             inverseJoinColumns = { @JoinColumn(name = "fk_id_libreria") })
     private List<Libreria> librerias = new ArrayList<>();
-
+    */
+    /*
+    @OneToMany(mappedBy = "libro", cascade = CascadeType.PERSIST)
+    private List<ColeccionLibrosEditorial> coleccionesEditoriales = new ArrayList<>();
+*/
 
 	public Libro() {
 		super();
 	}
 
-
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public String getTitulo() {
 		return titulo;
 	}
-
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
-
 	public double getPrecio() {
 		return precio;
 	}
-
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 
-
 	public Autor getAutor() {
 		return autor;
 	}
-
 
 	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
 
-
 	public Editorial getEditorial() {
 		return editorial;
 	}
-
 
 	public void setEditorial(Editorial editorial) {
 		this.editorial = editorial;
 	}
 
-
-	public List<Libreria> getLibrerias() {
-		return librerias;
-	}
-
-
-	public void setLibrerias(List<Libreria> librerias) {
-		this.librerias = librerias;
-	}
-
-    // Getters and setters
-    
+	
 }

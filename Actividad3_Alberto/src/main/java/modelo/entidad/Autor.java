@@ -1,20 +1,12 @@
 package modelo.entidad;
 
-
-import java.util.ArrayList;
-
-
-
 import java.util.Date;
 import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -35,7 +27,7 @@ public class Autor {
 
     
     @OneToMany(mappedBy="autor", cascade = CascadeType.PERSIST)
-    private List<Libro> libros = new ArrayList<>();
+    private List<Libro> libros;
 
 	public Autor() {
 		super();
@@ -80,6 +72,8 @@ public class Autor {
 	public void setLibros(List<Libro> libros) {
 		this.libros = libros;
 	}
+
+	
 
 
 	

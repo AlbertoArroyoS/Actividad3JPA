@@ -1,10 +1,11 @@
 package prueba;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import modelo.entidad.ColeccionLibrosLibreria;
-import modelo.entidad.Editorial;
 import modelo.entidad.Libreria;
 import modelo.entidad.Libro;
 
@@ -30,41 +31,38 @@ public class _04_AltaLibrerias {
 		Libro libro8 = em.find(Libro.class, 8);
 		
 		 // Crear librerías
-        Libreria libreria1 = crearLibreria("Libreria A", "Dueño A", "Dirección A", em);
-        libreria1.getColeccionLibrosLibreria().add(crearRelacionLibroLibreria(libro1, libreria1, em));
-        libreria1.getColeccionLibrosLibreria().add(crearRelacionLibroLibreria(libro2, libreria1, em));
-        libreria1.getColeccionLibrosLibreria().add(crearRelacionLibroLibreria(libro3, libreria1, em));
-        libreria1.getColeccionLibrosLibreria().add(crearRelacionLibroLibreria(libro4, libreria1, em));
+        Libreria libreria1 = new Libreria();
+        libreria1.setNombre("Libreria A");
+        libreria1.setNombreDueno("Dueño A");
+        libreria1.setDireccion("Dirección A");
+        List<Libro> librosLibreria1 = new ArrayList<>();
+        librosLibreria1.add(libro1);
+        librosLibreria1.add(libro2);
+        librosLibreria1.add(libro3);
+        librosLibreria1.add(libro4);
+        libreria1.setLibros(librosLibreria1);
 
-        Libreria libreria2 = crearLibreria("Libreria B", "Dueño B", "Dirección B", em);
-        libreria2.getColeccionLibrosLibreria().add(crearRelacionLibroLibreria(libro5, libreria2, em));
-        libreria2.getColeccionLibrosLibreria().add(crearRelacionLibroLibreria(libro6, libreria2, em));
-        libreria2.getColeccionLibrosLibreria().add(crearRelacionLibroLibreria(libro7, libreria2, em));
-        libreria2.getColeccionLibrosLibreria().add(crearRelacionLibroLibreria(libro8, libreria2, em));
+        Libreria libreria2 = new Libreria();
+        libreria2.setNombre("Libreria B");
+        libreria2.setNombreDueno("Dueño B");
+        libreria2.setDireccion("Dirección B");
+        List<Libro> librosLibreria2 = new ArrayList<>();
+        librosLibreria2.add(libro5); // Puedes asociar los mismos libros a ambas librerías
+        librosLibreria2.add(libro6);
+        librosLibreria2.add(libro7);
+        librosLibreria2.add(libro8);
+        libreria2.setLibros(librosLibreria2);
+
+        // Persistir librerías
+        em.persist(libreria1);
+        em.persist(libreria2);
         
         em.getTransaction().commit(); 
+        
 		em.close();	
 		
 		emf.close();	
 
 	}
-	
-	private static Libreria crearLibreria(String nombre, String nombreDueno, String direccion, EntityManager em) {
-	    Libreria libreria = new Libreria();
-	    libreria.setNombre(nombre);
-	    libreria.setNombreDueno(nombreDueno);
-	    libreria.setDireccion(direccion);
-	    em.persist(libreria);
-	    return libreria;
-	}
-	
-	private static ColeccionLibrosLibreria crearRelacionLibroLibreria(Libro libro, Libreria libreria, EntityManager em) {
-	    ColeccionLibrosLibreria relacion = new ColeccionLibrosLibreria();
-	    relacion.setLibro(libro);
-	    relacion.setLibreria(libreria);
-	    em.persist(relacion);
-	    return relacion;
-	}
-
 	
 }
