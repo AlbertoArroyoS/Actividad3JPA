@@ -139,12 +139,12 @@ public class _01_AltaDatos {
             heroe1.setHabilidades(listaHabilidades1);
 
             List<Habilidad> listaHabilidades2 = new ArrayList<>();
-            listaHabilidades2.add(habilidad3);
+            listaHabilidades2.add(habilidad2);
             listaHabilidades2.add(habilidad4);
             heroe2.setHabilidades(listaHabilidades2);
 
             List<Habilidad> listaHabilidades3 = new ArrayList<>();
-            listaHabilidades3.add(habilidad2);
+            listaHabilidades3.add(habilidad3);
             listaHabilidades3.add(habilidad4);
             heroe3.setHabilidades(listaHabilidades3);
 
