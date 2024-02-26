@@ -15,6 +15,7 @@ public class IdentidadSecreta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreReal;
+    private String direccion;
 
     @OneToOne
     @JoinColumn(name = "superheroe_id")
@@ -46,6 +47,14 @@ public class IdentidadSecreta {
 
 	public void setSuperheroe(Superheroe superheroe) {
 		this.superheroe = superheroe;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 
     

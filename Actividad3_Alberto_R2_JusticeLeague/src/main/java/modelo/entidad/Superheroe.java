@@ -20,7 +20,7 @@ public class Superheroe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
-    private String poder;
+    private String especie;
 
     @OneToOne(mappedBy = "superheroe")
     private IdentidadSecreta identidadSecreta;
@@ -35,6 +35,14 @@ public class Superheroe {
         joinColumns = @JoinColumn(name = "superheroe_id"),
         inverseJoinColumns = @JoinColumn(name = "habilidad_id"))
     private List<Habilidad> habilidades;
+    
+    @ManyToMany
+    @JoinTable(
+        name = "superheroe_debilidad",
+        joinColumns = @JoinColumn(name = "superheroe_id"),
+        inverseJoinColumns = @JoinColumn(name = "debilidad_id"))
+    private List<Debilidad> debilidades;
+    
 
 	public Superheroe() {
 		super();
@@ -56,13 +64,6 @@ public class Superheroe {
 		this.nombre = nombre;
 	}
 
-	public String getPoder() {
-		return poder;
-	}
-
-	public void setPoder(String poder) {
-		this.poder = poder;
-	}
 
 	public IdentidadSecreta getIdentidadSecreta() {
 		return identidadSecreta;
@@ -87,6 +88,23 @@ public class Superheroe {
 	public void setHabilidades(List<Habilidad> habilidades) {
 		this.habilidades = habilidades;
 	}
+
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
+	}
+
+	public List<Debilidad> getDebilidades() {
+		return debilidades;
+	}
+
+	public void setDebilidades(List<Debilidad> debilidades) {
+		this.debilidades = debilidades;
+	}
+	
 
 
 }
