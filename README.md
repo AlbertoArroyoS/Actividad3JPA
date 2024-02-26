@@ -8,7 +8,7 @@ Actividad Realizada por:
 
 Pautas de elaboración
 
-Requerimiento 1
+## Requerimiento 1. Actividad3_Alberto_V2
 
 La idea de esta aplicación será la de generar un modelo de datos para gestionar una cadena de librerías.
 
@@ -32,7 +32,8 @@ Mostrar todos los libros dados de alta, con su editorial y su autor
 Mostrar todos los autores dados de alta, con sus libros asociados
 Mostrar todas las librerías, con solamente sus libros asociados
 Mostrar todos los libros dados de alta, y en la librería en la que están.
-Requerimiento 2
+
+## Requerimiento 2. Actividad3_Alberto_R2_JusticeLeagueFinal
 
 Se pide realizar un nuevo modelo de datos que cubra todos los tipos de relaciones visto en clase, esto es, 1 a 1, 1 a N y N a M. El modelo tendrá las entidades necesarias para realizar dichas relaciones y será inventado por los alumnos, es decir, será un trabajo original. Se piden hacer las entidades y las anotaciones en cada entidad para realizar el modelo de datos de JPA.
 
@@ -40,6 +41,6 @@ Se recomienda que cada integrante del equipo realice un modelo nuevo para practi
 
 Por ejemplo, se podría hacer un modelo de datos de una empresa de coches, que tuviera una lista de empleados asociados y una dirección asociada.
 
-Requerimiento 3
+## Requerimiento 3. Actividad3_Alberto_R3
 
 Aplicando JAXB, coger la clase ‘Articulo’ de la actividad 1 y serializar una lista con 3 artículos a XML. Para ello se deberán de usar las anotaciones de JAXB correspondientes.
