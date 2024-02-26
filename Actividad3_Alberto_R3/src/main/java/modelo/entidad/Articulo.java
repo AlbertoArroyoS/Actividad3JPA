@@ -8,7 +8,6 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * La clase Articulo representa un artículo con información como id, nombre, descripción, stock y precio.
- * Implementa la interfaz Serializable para permitir la serialización de objetos.
  *
  * @author Alberto Arroyo Santofimia
  * 

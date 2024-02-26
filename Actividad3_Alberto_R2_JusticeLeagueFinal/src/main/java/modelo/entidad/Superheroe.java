@@ -12,7 +12,25 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
+/**
+ * La clase Superheroe representa a un personaje con habilidades especiales. Cada superhéroe tiene un identificador único,
+ * un nombre, una especie, una identidad secreta, un equipo al que pertenece y puede tener habilidades y debilidades.
+ * 
+ * <p>Esta clase se utiliza en el contexto de persistencia de datos, ya que está anotada con las
+ * anotaciones de JPA para mapear la clase a una tabla en una base de datos relacional.</p>
+ * 
+ * <p>Las relaciones de esta clase incluyen:
+ * <ul>
+ *   <li>One-to-One con IdentidadSecreta: Cada superhéroe tiene una única identidad secreta.</li>
+ *   <li>Many-to-One con Equipo: Cada superhéroe pertenece a un único equipo.</li>
+ *   <li>Many-to-Many con Habilidad: Cada superhéroe puede tener varias habilidades.</li>
+ *   <li>Many-to-Many con Debilidad: Cada superhéroe puede tener varias debilidades.</li>
+ * </ul>
+ * </p>
+ * 
+ * @author Alberto Arroyo Santofimia
+ * @version 1.0
+ */
 @Entity
 @Table(name = "superheroes")
 public class Superheroe {
