@@ -1,4 +1,4 @@
-package modelo.actividad.altaBaseDatos;
+package datos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -110,10 +110,23 @@ public class _01_AltaDatos {
             IdentidadSecreta identidad3 = new IdentidadSecreta();
             identidad3.setNombreReal("Hal Jordan");
             identidad3.setDireccion("Coast City");
+            
+            identidad1.setSuperheroe(heroe1);
+            identidad2.setSuperheroe(heroe2);
+            identidad3.setSuperheroe(heroe3);
+            
+            /*
+            heroe1.setIdentidadSecreta(identidad1);
+            heroe2.setIdentidadSecreta(identidad2);
+            heroe3.setIdentidadSecreta(identidad3);
+            */
+            
 
             em.persist(identidad1);
             em.persist(identidad2);
             em.persist(identidad3);
+            
+           
 
             em.getTransaction().commit();
 

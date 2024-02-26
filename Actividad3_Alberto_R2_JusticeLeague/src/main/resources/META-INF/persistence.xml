@@ -19,7 +19,7 @@
 			 <property name="javax.persistence.schema-generation.database.action" value="update"/>
 			 			 
 			 -->
-			 <property name="javax.persistence.schema-generation.database.action" value="update"/>
+			 <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 			 
 			 
 			<!-- Mostrar trazas de SQL y establecer dialecto con Hibernate -->
